@@ -33,7 +33,7 @@ namespace Leaderboard.Controllers
             var user = await _repository.GetAsync(id);
 
             if (user == null)
-                return BadRequest("User not found");
+                return BadRequest();
 
             await _repository.DeleteAsync(id);
             return Ok();
@@ -51,7 +51,7 @@ namespace Leaderboard.Controllers
             var user = await _repository.GetAsync(entity.Id);
 
             if (user == null)
-                return BadRequest("User not found");
+                return BadRequest();
 
             user = entity;
 
