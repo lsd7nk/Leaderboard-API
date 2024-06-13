@@ -3,7 +3,7 @@
     public sealed class TokenMiddleware : Middleware
     {
         private readonly string _token;
-        private const string QUERY_KEY = "token";
+        private const string HEADER_KEY = "Token";
 
         public TokenMiddleware(RequestDelegate next, string token) : base(next)
         {
@@ -12,9 +12,9 @@
 
         public override async Task InvokeAsync(HttpContext context)
         {
-            var query = context.Request.Query;
+            var query = context.Request.Headers;
 
-            if (!query.ContainsKey(QUERY_KEY) || !ValidateToken(query[QUERY_KEY]))
+            if (!query.ContainsKey(HEADER_KEY) || !ValidateToken(query[HEADER_KEY]))
             {
                 context.Response.StatusCode = 403;
                 return;

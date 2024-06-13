@@ -3,8 +3,8 @@ using Leaderboard.Services;
 
 namespace Leaderboard.Controllers
 {
-    [Route("leaderboard")]
     [ApiController]
+    [Route("leaderboard")]
     public sealed class DateTimeController : ControllerBase
     {
         private readonly DateTimeService _dateTimeService;

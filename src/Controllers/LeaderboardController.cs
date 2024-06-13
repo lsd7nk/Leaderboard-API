@@ -4,8 +4,8 @@ using Leaderboard.Models;
 
 namespace Leaderboard.Controllers
 {
-    [Route("leaderboard")]
     [ApiController]
+    [Route("leaderboard")]
     public sealed class LeaderboardController : ControllerBase
     {
         private readonly IRepository<User> _repository;
