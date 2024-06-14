@@ -40,9 +40,10 @@ namespace Leaderboard.Controllers
         }
 
         [HttpPost]
-        public async Task Post([FromBody] User entity)
+        public async Task<IActionResult> Post([FromBody] User entity)
         {
             await _repository.AddAsync(entity);
+            return Ok();
         }
 
         [HttpPut]
