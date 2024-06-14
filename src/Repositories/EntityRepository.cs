@@ -29,7 +29,7 @@ namespace Leaderboard.Repositories
             if (entity == null)
                 return;
 
-            _context.Remove(entity);
+            _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();
         }
 
