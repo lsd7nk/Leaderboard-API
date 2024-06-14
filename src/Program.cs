@@ -24,6 +24,7 @@ namespace Leaderboard.API
 
             app.UseHttpsRedirection();
             app.UseErrorHandling();
+            app.MapControllers();
             app.UseToken(token);
 
             app.Run();

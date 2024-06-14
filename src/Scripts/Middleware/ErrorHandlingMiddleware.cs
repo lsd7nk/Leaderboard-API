@@ -22,7 +22,8 @@
 
             await response.WriteAsync(response.StatusCode switch
             {
-                ACCESS_DENIED_STATUS_CODE => "Access denied"
+                ACCESS_DENIED_STATUS_CODE => "Access denied",
+                _ => string.Empty
             });
         }
     }
